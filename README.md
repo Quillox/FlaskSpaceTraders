@@ -1,5 +1,7 @@
 # A database for Space Traders
 
+[Space Traders](https://spacetraders.io/)
+
 ## Description
 This project contains code for creating a postgres database and flask application to interact with it. Once the database is created, run the flask application to populate it with data from the Space Traders API. The web app also has some pages to display some of the data in the database. The flask app follows Model View Controller (MVC) design pattern
 
