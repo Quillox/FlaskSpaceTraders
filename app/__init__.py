@@ -4,6 +4,8 @@ import secrets
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+__author__ = 'David Parker'
+
 db = SQLAlchemy()
 
 def create_app():
