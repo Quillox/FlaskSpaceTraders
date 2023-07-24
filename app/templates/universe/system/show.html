@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}System{% endblock %}
+
+{% block content %}
+<h1>{{ system.symbol }}: {{system.type}}</h1>
+{% for waypoint in system.waypoints %}
+<div style="display: flex;" class="mt-3">
+<button type="button" class="collapsible">{{waypoint.symbol}}</button>
+<div class="collapse" id="waypoint-{{ waypoint.symbol }}" style="display: none">
+    <ul>
+        <li>{{waypoint}}</li>
+        <li>Traits:
+            <ul>
+                {% for trait in waypoint.traits %}
+                <li>{{trait}}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>Orbitals:
+            <ul>
+                {% for orbital in waypoint.orbitals %}
+                <li>{{orbital}}</li>
+                <li>Traits:
+                    <ul>
+                        {% for trait in orbital.traits %}
+                        <li>{{trait}}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}

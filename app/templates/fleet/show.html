@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}Fleet{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('agent.show', symbol=agent.symbol) }}" class="btn btn-primary mt-3">Back</a>
+<br>
+<h1>{{ agent.symbol }}'s Fleet</h1>
+{% if agent.fleet %}
+  {% for ship in agent.fleet %}
+  <button type="button" class="collapsible">{{ship.symbol}}</button>
+    <div class="collapse" id="ship-{{ ship.symbol }}" style="display: none">
+      <table>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cargo Capacity</td>
+            <td>{{ ship.cargo_capacity }}</td>
+          </tr>
+          <tr>
+            <td>Cargo Current Units</td>
+            <td>{{ ship.cargo_current_units }}</td>
+          </tr>
+          <tr>
+            <td>Fuel Capacity</td>
+            <td>{{ ship.fuel_capacity }}</td>
+          </tr>
+          <tr>
+            <td>Fuel Current</td>
+            <td>{{ ship.fuel_current }}</td>
+          </tr>
+          <tr>
+            <td>Registration</td>
+            <td>{{ ship.registration }}</td>
+          </tr>
+          <tr>
+            <td>Nav </td>
+            <td>{{ ship.nav }}</td>
+          </tr>
+          <tr>
+            <td>Nav Route</td>
+            <td>{{ ship.nav_route }}</td>
+          </tr>
+          <tr>
+            <td>Crew</td>
+            <td>{{ ship.crew }}</td>
+          </tr>
+          <tr>
+            <td>Main components</td>
+            <td>
+              <ul>
+              {% for component in ship.main_component %}
+                <li>{{ component }}</li>
+              {% endfor %}
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Modules</td>
+            <td>
+              <ul>
+              {% for module in ship.modules %}
+                <li>{{ module }}</li>
+              {% endfor %}
+              </ul>
+          </tr>
+          <tr>
+            <td>Mounts</td>
+            <td>
+              <ul>
+              {% for mount in ship.mounts %}
+                <li>{{ mount }}</li>
+              {% endfor %}
+              </ul>
+          </tr>
+          <tr>
+            <td>Inventory</td>
+            <td>
+              <ul>
+              {% for item in ship.inventory %}
+                <li>{{ item }}</li>
+              {% endfor %}
+              </ul>
+          </tr>
+          <tr>
+            <td>Fuel logs</td>
+            <td>
+              <ul>
+              {% for log in ship.fuel_logs %}
+                <li>{{ log }}</li>
+              {% endfor %}
+              </ul>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  {% endfor %}
+{% else %}
+<p>No ships in fleet</p>
+{% endif %}
+
+{% endblock %}

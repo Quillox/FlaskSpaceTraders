@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to the Universe!</h1>
+<div style="display: flex; flex-direction: row;">
+  <div style="flex: 1">
+    <h2>Factions</h2>
+    <a href="{{ url_for('universe.faction_index') }}" class="btn btn-primary btn-block">See all Factions</a>
+    <br>
+    <form method="POST" action="{{ url_for('universe.populate_tables_api') }}">
+      <button type="submit" class="btn btn-secondary btn-block">Populate Factions Table</button>
+    </form>
+  </div>
+  <div style="flex: 1">
+    <h2>Systems</h2>
+    <a href="{{ url_for('universe.system_index') }}" class="btn btn-primary btn-block">Systems</a>
+    <br>
+  <!-- add button to populate jumpgates -->
+  <form method="POST" action="{{ url_for('universe.populate_tables_api') }}">
+    <button type="submit" name="populate_jump_gates" class="btn btn-secondary btn-block">Add Jump Gates to db</button>
+  </form>
+  <br>
+  <!-- Add button to populate systems -->
+  <form method="POST" action="{{ url_for('universe.populate_tables_api') }}">
+    <button type="submit" name="populate_systems" class="btn btn-secondary btn-block">Populate Systems Table</button>
+  </form>
+  </div>
+  <div style="flex: 1">
+    <h2>Shipyard</h2>
+    <a href="{{ url_for('universe.shipyard_index') }}" class="btn btn-primary btn-block">Shipyards</a>  
+</div>
+{% endblock %}

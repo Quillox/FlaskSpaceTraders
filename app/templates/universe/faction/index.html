@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Factions</h1>
+  <ul>
+    {% for faction in factions %}
+      <li><a href="{{ url_for('universe.faction_show', symbol=faction.symbol) }}">{{ faction.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

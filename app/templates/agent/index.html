@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}All Agents{% endblock %}
+
+{% block content %}
+<h1>Agents</h1>
+<ul>
+{% for agent in agents %}
+<div class="agent-container">
+  <a href="{{ url_for('agent.show', symbol=agent.symbol) }}">{{ agent.symbol }}</a>
+  <!-- Add delete button -->
+  <form action="{{ url_for('agent.delete', symbol=agent.symbol) }}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value= "Delete {{ agent.symbol }}">
+  </form>
+  <br>
+</div>
+{% endfor %}
+</ul>
+{% endblock %}

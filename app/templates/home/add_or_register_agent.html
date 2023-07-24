@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>Welcome to my Space Traders webpage!</h1>
+  <h2>Add or Register Agent</h1>
+  <div style="display: flex; flex-direction: row;">
+    <div style="flex: 1;">
+      <h2>Register New Agent</h2>
+      <form method="post">
+        <label for="symbol">Symbol (3-14 characters):</label>
+        <input type="text" id="symbol" name="symbol" minlength="3" maxlength="14" required><br><br>
+        <label for="email">Email (not required):</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="faction">Faction:</label>
+        <select id="faction" name="faction">
+            <option value="COSMIC">COSMIC</option>
+            <option value="VOID">VOID</option>
+            <option value="GALACTIC">GALACTIC</option>
+            <option value="QUANTUM">QUANTUM</option>
+            <option value="DOMINION">DOMINION</option>
+            <option value="ASTRO">ASTRO</option>
+            <option value="CORSAIRS">CORSAIRS</option>
+            <option value="OBSIDIAN">OBSIDIAN</option>
+            <option value="AEGIS">AEGIS</option>
+            <option value="UNITED">UNITED</option>
+            <option value="SOLITARY">SOLITARY</option>
+            <option value="COBALT">COBALT</option>
+            <option value="OMEGA">OMEGA</option>
+            <option value="ECHO">ECHO</option>
+            <option value="LORDS">LORDS</option>
+            <option value="CULT">CULT</option>
+            <option value="ANCIENTS">ANCIENTS</option>
+            <option value="SHADOW">SHADOW</option>
+            <option value="ETHEREAL">ETHEREAL</option>
+        </select><br><br>
+        <input type="submit" value="Register">
+    </form>
+    </div>
+    <div style="flex: 1;">
+      <h2>Add Existing Agent</h2>
+      <form method="POST">
+        <label for="agent_token">Agent Token:</label>
+        <input type="text" id="agent_token" name="agent_token" required><br><br>
+        <input type="submit" name="add_agent" value="Add Agent">
+      </form>
+    </div>
+  </div>
+{% endblock %}

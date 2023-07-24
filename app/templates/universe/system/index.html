@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Systems</h1>
+  <div id="div_system" style="width: 80%; height: 80%; position: absolute;">
+    {% for system in systems %}
+    <a id="{{system.symbol}}" href="{{ url_for('universe.system_show', symbol=system.symbol) }}" class="btn btn-primary mt-3" >{{ system.symbol }}</a>
+    <script>
+      var button = document.getElementById('{{ system.symbol }}');
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      var screen = {
+        width: w,
+        height: h
+      };
+      var div = document.getElementById('div_system');
+      var div_size = {
+        width: div.offsetWidth,
+        height: div.offsetHeight
+      };
+
+      var max_x = '{{max_x}}';
+      var max_y = '{{max_y}}';
+      var min_x = '{{min_x}}';
+      var min_y = '{{min_y}}';
+
+      var x_diff = max_x - min_x;
+      var y_diff = max_y - min_y;
+
+      var system = {
+        x: '{{ system.x }}',
+        y: '{{ system.y }}'
+      };
+
+      // Normalize the system coordinates to the screen size
+      system.x = (system.x - min_x) / x_diff * div_size.width * 0.8;
+      system.y = (system.y - min_y) / y_diff * div_size.height * 0.8;
+
+
+      // Set the button position
+      button.style.position = 'absolute'
+      button.style.left = system.x + 'px';
+      button.style.top = system.y + 'px';
+    </script>
+    {% endfor %}
+  </div>
+{% endblock %}

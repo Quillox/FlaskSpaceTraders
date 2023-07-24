@@ -1,0 +1,84 @@
+/* Style the navigation bar */
+nav {
+    background-color: #0a0617;
+    overflow: hidden;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+nav li {
+    float: left;
+}
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav li a:hover {
+    background-color: #918c8c68;
+}
+
+/* Style the body content */
+body {
+    background-color: #0d0c0f;
+    color: #ded2ed;
+}
+
+/* Style the main content */
+main {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #5b535300;
+    color: #9890b4;
+}
+
+/* link style */
+a {
+    color: #d3dc57;
+}
+
+/* list style */
+ul {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+li {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/* Style the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: #c2b9d4 solid 1px;
+}
+
+th {
+    background-color: #2c2a3166;
+    /* color: #cac3d8; */
+    padding: 5px;
+    /* Center align */
+    text-align: center;
+}
+td {
+    padding: 5px;
+    border: #c2b9d4 solid 1px;
+}
+
+/* Style the button */
+button {
+    background-color: #2c2a31;
+    color: #cac3d8;
+    padding: 5px;
+    border: #c2b9d4 solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}

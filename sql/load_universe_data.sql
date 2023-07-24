@@ -1,0 +1,10 @@
+COPY system FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\system.csv' DELIMITER ',' CSV HEADER;
+COPY faction FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\faction.csv' DELIMITER ',' CSV HEADER;
+COPY faction_trait FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\faction_trait.csv' DELIMITER ',' CSV HEADER;
+COPY waypoint FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\waypoint.csv' DELIMITER ',' CSV HEADER;
+COPY waypoint_trait FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\waypoint_trait.csv' DELIMITER ',' CSV HEADER;
+COPY chart FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\chart.csv' DELIMITER ',' CSV HEADER;
+COPY waypoint_trait_link FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\waypoint_trait_link.csv' DELIMITER ',' CSV HEADER;
+COPY faction_trait_link FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\faction_trait_link.csv' DELIMITER ',' CSV HEADER;
+COPY system_faction_link FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\system_faction_link.csv' DELIMITER ',' CSV HEADER;
+COPY orbital_link FROM 'D:\D_Switch\MyFiles\Projects\SpaceTraders\data\universe\orbital_link.csv' DELIMITER ',' CSV HEADER;

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Agent{% endblock %}
+
+{% block content %}
+
+<h1>{{ agent_data.name }}</h1>
+<p>{{ agent_data.description }}</p>
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Symbol</td>
+      <td>{{ agent_data.symbol }}</td>
+    </tr>
+    <tr>
+      <td>Token</td>
+      <td>{{ agent_data.token }}</td>
+    </tr>
+    <tr>
+      <td>Account ID</td>
+      <td>{{ agent_data.account_id }}</td>
+    </tr>
+    <tr>
+      <td>Headquarters</td>
+      <td>{{ agent_data.headquarters }}</td>
+    </tr>
+    <tr>
+      <td>Credits</td>
+      <td>{{ agent_data.credits }}</td>
+    </tr>
+    <tr>
+      <td>Starting Faction</td>
+      <td>{{ agent_data.starting_faction }}</td>
+    </tr>
+    <tr>
+      <td>Contracts</td>
+      <td>
+          <ul>
+            {% for contract in agent_data.contracts %}
+              <li>{{ contract }}</li>
+            {% endfor %}
+          </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Fleet</td>
+      <td><a href="{{ url_for('fleet.show', symbol=agent_data.symbol) }}">View Fleet</a></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<a href="{{ url_for('agent.index') }}" class="btn btn-primary mt-3">Back</a>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Agent{% endblock %}
+
+{% block content %}
+
+<h1>{{ faction_data.name }}</h1>
+<p>{{ faction_data.description }}</p>
+<table>
+  <thead>
+    <tr>
+      <th>Trait</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for trait in faction_data.traits %}
+      <tr>
+        <td>{{ trait.name }}</td>
+        <td>{{ trait.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('universe.faction_index') }}" class="btn btn-primary mt-3">Back</a>
+
+{% endblock %}

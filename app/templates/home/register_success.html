@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Agent successfully registered{% endblock %}
+{% block content %}
+<h1>Agent successfully registered!</h1>
+<a href="{{ url_for('home.add_or_register_agent') }}" class="btn btn-primary mt-3">Back</a>
+{% endblock %}

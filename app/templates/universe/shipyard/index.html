@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Agent{% endblock %}
+
+{% block content %}
+
+<h1>Shipyards</h1>
+<ul>
+    {% for shipyard in shipyards %}
+    <li>
+        <h2>{{ shipyard.symbol }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ships</td>
+                    <td>
+                        <ul>
+                            {% for ship in shipyard.ships %}
+                            <li>{{ ship }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Transactions</td>
+                    <td>
+                        <ul>
+                            {% for transaction in shipyard.transactions %}
+                            <li>{{ transaction }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
