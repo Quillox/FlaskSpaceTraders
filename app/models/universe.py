@@ -704,6 +704,7 @@ class System(db.Model):
             with open('data/universe/systems.json', 'w') as f:
                 json.dump(systems, f)
 
+        random.shuffle(systems)
         for system_data in systems:
             System.add_system_to_db(system_data, token)
         print('Systems table populated')
